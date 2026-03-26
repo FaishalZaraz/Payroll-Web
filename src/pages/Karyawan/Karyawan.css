@@ -1,0 +1,79 @@
+.karyawan-page {
+  animation: fadeIn var(--transition-slow) ease;
+}
+.karyawan-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+  flex-wrap: wrap;
+}
+.karyawan-filters {
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+  flex: 1;
+}
+.karyawan-filters input {
+  max-width: 260px;
+}
+.karyawan-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/* Employee form */
+.karyawan-form-page {
+  animation: fadeIn var(--transition-slow) ease;
+}
+.form-tabs {
+  display: flex;
+  gap: var(--space-1);
+  margin-bottom: var(--space-6);
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0;
+}
+.form-tab {
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  color: var(--text-muted);
+  border: none;
+  background: none;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all var(--transition-fast);
+  margin-bottom: -1px;
+}
+.form-tab:hover {
+  color: var(--text-secondary);
+}
+.form-tab.active {
+  color: var(--accent-blue);
+  border-bottom-color: var(--accent-blue);
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+}
+.form-actions {
+  display: flex;
+  gap: var(--space-3);
+  justify-content: flex-end;
+  margin-top: var(--space-6);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--border-color);
+}
+
+@media (max-width: 640px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .karyawan-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

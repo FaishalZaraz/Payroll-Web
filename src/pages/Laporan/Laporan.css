@@ -1,0 +1,141 @@
+.laporan-page {
+  animation: fadeIn var(--transition-slow) ease;
+}
+.laporan-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+}
+.laporan-filters {
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+}
+.laporan-table {
+  width: 100%;
+}
+.laporan-table .row-header {
+  font-weight: var(--fw-semibold);
+  background: var(--bg-hover);
+}
+.laporan-table .row-total {
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-md);
+  border-top: 2px solid var(--border-color-strong);
+}
+.laporan-table .indent {
+  padding-left: var(--space-8) !important;
+}
+
+.slip-page {
+  animation: fadeIn var(--transition-slow) ease;
+}
+.slip-preview {
+  background: #fff;
+  color: #1a1a2e;
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  max-width: 700px;
+  margin: 0 auto;
+  box-shadow: var(--shadow-lg);
+}
+.slip-header {
+  text-align: center;
+  border-bottom: 2px solid #1a1a2e;
+  padding-bottom: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+.slip-header h2 {
+  font-size: var(--fs-xl);
+  color: #1a1a2e;
+}
+.slip-header p {
+  font-size: var(--fs-sm);
+  color: #555;
+}
+.slip-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+  font-size: var(--fs-sm);
+}
+.slip-info-grid .label {
+  color: #777;
+}
+.slip-info-grid .value {
+  font-weight: var(--fw-semibold);
+  color: #1a1a2e;
+}
+.slip-table {
+  width: 100%;
+  font-size: var(--fs-sm);
+  margin-bottom: var(--space-4);
+}
+.slip-table th {
+  background: #f0f0f5;
+  color: #333;
+  padding: var(--space-2) var(--space-3);
+  text-align: left;
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.slip-table td {
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 1px solid #e5e5ea;
+  color: #333;
+}
+.slip-table .total-row td {
+  font-weight: var(--fw-bold);
+  border-top: 2px solid #333;
+  font-size: var(--fs-base);
+}
+.slip-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--space-8);
+  font-size: var(--fs-sm);
+  color: #777;
+}
+
+/* =========================================================
+   Print Styles for PDF Export (Slip Gaji)
+   ========================================================= */
+@media print {
+  /* Hide unnecessary app chrome and navbar/sidebar */
+  nav, aside, header, footer, .sidebar, .sidebar-overlay, .navbar, .btn-print-hide {
+    display: none !important;
+  }
+
+  /* Hide the page controls, title and filters */
+  .page-title, .form-group, .laporan-toolbar, .slip-page > div:first-of-type {
+    display: none !important;
+  }
+
+  /* Reset body and container backgrounds for clean printing */
+  body, html, #root, .dashboard-layout, .main-content {
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+  }
+
+  /* Isolate the slip-preview container */
+  .slip-preview {
+    margin: 0 !important;
+    padding: 20px !important;
+    max-width: none !important;
+    width: 100% !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  /* Ensure colors and backgrounds print correctly */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}
